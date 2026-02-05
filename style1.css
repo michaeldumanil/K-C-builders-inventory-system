@@ -1,0 +1,25 @@
+.vehicle-box {
+    background: #fafafa;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.vehicle-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vehicle-row img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.vehicle-row span {
+    flex: 1;
+}
+
+.vehicle-row button {
+    padding: 5px 10px;
+}
