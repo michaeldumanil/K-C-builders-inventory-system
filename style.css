@@ -19,7 +19,9 @@ header {
     background: white;
     margin-top: 20px;
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 input {
     padding: 8px;
@@ -27,22 +29,26 @@ input {
     width: 100%;
 }
 
+
 button {
     padding: 8px 15px;
     background-color: #f9c300;
     border: none;
     cursor: pointer;
     margin-top: 5px;
+    border-radius: 3px;
 }
 
 button:hover {
     background-color: #d4a700;
 }
 
+
 ul {
     list-style: none;
     padding: 0;
 }
+
 
 li {
     background: #eee;
@@ -51,4 +57,9 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+li:hover {
+    background-color: #f9c300;
+    color: #000;
 }
