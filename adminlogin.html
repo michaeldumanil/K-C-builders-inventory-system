@@ -2,19 +2,26 @@
 <html>
 <head>
     <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
 
-<div class="login-box">
-    <h2>K&C Builders</h2>
-    <p>Admin Login</p>
-
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-
-    <p id="msg"></p>
+    <div class="login-container">
+        <div class="login-left">
+            <h1>K&C Builders</h1>
+            <p>Welcome to Admin Portal</p>
+        </div>
+    
+        <div class="login-right">
+            <div class="login-box">
+                <h2>Admin Login</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
