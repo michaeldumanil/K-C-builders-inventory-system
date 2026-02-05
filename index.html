@@ -2,18 +2,27 @@
 <html>
 <head>
     <title>K&C Builders Inventory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>K&C Builders Inventory System</h1>
-<p>OJT Project – Week 2 Setup</p>
+<header>
+    <h1>K&C Builders</h1>
+    <p>Material Inventory System – Week 3</p>
+</header>
 
-<h3>ADD Material</h3>
-<input type="text" id="material" placeholder="Material name">
-<input type="number" id="quantity" placeholder="Quantity">
-<button onclick="addMaterial()">Add</button>
+<div class="container">
 
-<ul id="list"></ul>
+    <h3>Add Material</h3>
+
+    <input type="text" id="material" placeholder="Material name">
+    <input type="number" id="quantity" placeholder="Quantity">
+    <button onclick="addMaterial()">Add Material</button>
+
+    <h3>Material List</h3>
+    <ul id="list"></ul>
+
+</div>
 
 <script>
 function addMaterial() {
@@ -28,13 +37,19 @@ function addMaterial() {
     let li = document.createElement("li");
     li.textContent = material + " - " + quantity;
 
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = function () {
+        li.remove();
+    };
+
+    li.appendChild(deleteBtn);
     document.getElementById("list").appendChild(li);
 
     document.getElementById("material").value = "";
     document.getElementById("quantity").value = "";
 }
 </script>
-
 
 </body>
 </html>
