@@ -6,7 +6,35 @@
 <body>
 
 <h1>K&C Builders Inventory System</h1>
-<p>OJT Project – Week 1 Setup</p>
+<p>OJT Project – Week 2 Setup</p>
+
+<h3>ADD Material</h3>
+<input type="text" id="material" placeholder="Material name">
+<input type="number" id="quantity" placeholder="Quantity">
+<button onclick="addMaterial()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+function addMaterial() {
+    let material = document.getElementById("material").value;
+    let quantity = document.getElementById("quantity").value;
+
+    if (material === "" || quantity === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.textContent = material + " - " + quantity;
+
+    document.getElementById("list").appendChild(li);
+
+    document.getElementById("material").value = "";
+    document.getElementById("quantity").value = "";
+}
+</script>
+
 
 </body>
 </html>
