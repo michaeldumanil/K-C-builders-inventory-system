@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Construction Vehicles</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<header>
+    <h2>Construction Vehicles</h2>
+</header>
+
+<div class="container">
+
+    <!-- VEHICLE LIST -->
+    <div class="vehicle-box">
+        <h3>Available Vehicles</h3>
+
+        <div class="vehicle-row">
+            <img src="excavator.png">
+            <span>Excavator</span>
+            <button onclick="buyVehicle('Excavator')">Buy</button>
+        </div>
+
+        <div class="vehicle-row">
+            <img src="dumptruck.png">
+            <span>Dump Truck</span>
+            <button onclick="buyVehicle('Dump Truck')">Buy</button>
+        </div>
+
+        <div class="vehicle-row">
+            <img src="bulldozer.png">
+            <span>Bulldozer</span>
+            <button onclick="buyVehicle('Bulldozer')">Buy</button>
+        </div>
+
+    </div>
+
+    <!-- PURCHASED LIST -->
+    <div class="vehicle-box">
+        <h3>Purchased Vehicles</h3>
+        <ul id="purchasedList"></ul>
+    </div>
+
+</div>
+
+<script>
+let purchased = [];
+
+function buyVehicle(name) {
+    let date = new Date().toLocaleDateString();
+
+    purchased.push({
+        name: name,
+        date: date,
+        status: "Active"
+    });
+
+    renderList();
+}
+
+function renderList() {
+    let list = document.getElementById("purchasedList");
+    list.innerHTML = "";
+
+    purchased.forEach(v => {
+        let li = document.createElement("li");
+
+     
+        let status = v.status;
+        if (Math.random() > 0.6) {
+            status = "Under Maintenance";
+        }
+
+        li.textContent = v.name + " | Purchased: " + v.date + " | " + status;
+        list.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>
